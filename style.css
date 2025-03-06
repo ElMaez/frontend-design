@@ -5,7 +5,7 @@
   --color-text-button: #fff;
 
   /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
-  --hide-overlay: 0;
+  --hide-overlay: 1;
 }
 /* Begynd her... */
 
@@ -22,8 +22,48 @@ section {
   div:nth-child(2) {
     outline: dashed 2px rgb(14, 177, 57);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 1rem;
+    grid-template-columns: [first-start]1fr [picture1]1fr [last-end]1fr;
+    grid-template-rows: [row1]1fr [row2]1fr [row3]1fr [row4]1fr;
+    gap: 2rem;
+
+    img {
+      border-radius: 25px;
+    }
+    img:first-of-type() {
+      grid-area: row1 picture1 row1 picture1;
+    }
+    img:nth-of-type(2) {
+      grid-area: row2 first-start row2 first-start;
+    }
+    img:nth-of-type(3) {
+      grid-area: row2 picture1 row3 picture1;
+    }
+    img:nth-of-type(4) {
+      grid-area: row2 last-end row2 last-end;
+    }
+    img:nth-of-type(5) {
+      grid-area: row3 first-start row3 first-start;
+    }
+    img:nth-of-type(6) {
+      grid-area: row3 last-end row3 last-end;
+    }
+    img:nth-of-type(7) {
+      grid-area: row4 picture1 row4 picture1;
+    }
+  }
+
+  div:nth-child(1) {
+    h1,
+    p {
+      font-size: 5rem;
+      color: black;
+    }
+
+    button {
+      max-width: 300px;
+      background-color: #3d7bfa;
+      border-radius: 50px;
+      text-align: center;
+    }
   }
 }
