@@ -61,8 +61,6 @@ figcaption {
  .content og gør at den ligger sig visuelt 'under' .content */
   grid-column: 2/-1;
   grid-row: 2;
-
-  outline: dashed 1px rgb(255, 0, 208);
 }
 
 @media (width < 800px) {
